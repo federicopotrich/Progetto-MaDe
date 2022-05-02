@@ -1,18 +1,44 @@
 ---
-import Layout from '../components/Layout.astro';
+
 ---
 <head>
 	<title>Locanda dal Barba</title>
 </head>
 
 <body>
-	<header>
-
-	</header>
 	<main>
+		<a href="#">cooperativa</a>
 		<img src="/icona.png">
+		<div>
+			<a href="#">menù</a>
+			<a href="#">storia</a>
+		</div>
 	</main>
 </body>
 
 <style>
+body{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	overflow-y: hidden;
+}
+
+main{
+	display: flex;
+	justify-content: center;
+}
+div{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+a{
+	font-size: 2rem;
+	text-decoration: none;
+	font-family: 'Roboto', sans-serif;
+  	letter-spacing: 2px;
+}
+
 </style>
