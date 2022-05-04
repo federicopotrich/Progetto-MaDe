@@ -1,7 +1,23 @@
 ---
-
+	/*
+	fetch('http://api.made7-g6.webe.radio/api/voci-del-menu?populate=*').then(res=>{
+		return res.json()
+	}).then(dati=>{
+		let link = 'http://api.made7-g6.webe.radio'
+		//console.log(dati)
+		dati.data.forEach(element => {
+			console.log(link + element.attributes.cover.data.attributes.formats.medium.url)
+		});
+	})*/
+	/*fetch('http://api.made7-g6.webe.radio/api/storias/1').then(res=>{
+		return res.json()
+	}).then(dati=>{
+		console.log(dati.data.attributes.descrizione)
+		
+	})*/
 ---
 <head>
+<link rel="shortcut icon" href="icona.png">
 	<title>Locanda dal Barba</title>
 </head>
 <body>
