@@ -9,63 +9,43 @@
 			console.log(link + element.attributes.cover.data.attributes.formats.medium.url)
 		});
 	})*/
-	/*fetch('http://api.made7-g6.webe.radio/api/storias/1').then(res=>{
-		return res.json()
-	}).then(dati=>{
-		console.log(dati.data.attributes.descrizione)
-		
-	})*/
 ---
 <head>
 <link rel="shortcut icon" href="icona.png">
 	<title>Locanda dal Barba</title>
 </head>
 <body>
-	<main>
-		<a href="/cooperativa">cooperativa</a>
-		<img src="/icona.png">
-		<div>
-			<a href="/menu">menù</a>
-			<a href="/storia">storia</a>
-		</div>
-	</main>
+	<img src="/icona.png" id="immagine">
+	{}
 </body>
 
 <style>
 	body{
 		display: flex;
+		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		height: 100vh;
 		overflow-y: hidden;
 		background-color: #B48C59;
 	}
-
-	main{
-		display: flex;
-		justify-content: center;
-	}
-	div{
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-	}
-	a{
-		font-size: 2rem;
-		text-decoration: none;
-		font-family: 'Roboto', sans-serif;
-		letter-spacing: 2px;
-		color: white;
-		text-shadow: 0px 5px 20px white, 0px 0px 3px black;
-		height: 38px;
-		transition: 0.7s ease;
-		font-weight: bold;
-	}
-	a:hover{
-		color: rgb(176, 47, 52);
-		text-shadow: 0px 5px 20px rgb(176, 47, 52);
-	}
 	*{
-		margin: 0;
+		margin: 0px;
+	}
+	img{
+		transform: scale(1.75);
+	}
+	img:hover{
+		animation-name: animazione;
+		animation-duration: 3s;
+		animation-fill-mode: forwards;
+	}
+	@keyframes animazione{
+		from { 
+			transform: scale(1.75);
+		}
+		to { 
+			transform: scale(0.85);
+		}
 	}
 </style>
