@@ -1,2 +1,2 @@
-GET http://api.made7-g6.webe.radio/api/voci-del-menu?populate=*
+GET http://api.made7-g6.webe.radio/api/bevandes
 
