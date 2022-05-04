@@ -1,5 +1,6 @@
 ---
-    
+    const responseStoria = await fetch('http://api.made7-g6.webe.radio/api/storias')
+
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -7,6 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/icona.png">
     <title>Home</title>
 </head>
 <body>
@@ -31,6 +33,9 @@
         <article>
             <img class="img" src="icona.png" alt="">
         </article>
+        <div class="menu">
+            <a href="/menu">+</a>
+        </div>
         <article>
             <h1 id="storia">STORIA</h1>
         </article>
@@ -41,23 +46,80 @@
             <h1 id="locanda">LA LOCANDA</h1>
         </article>
     </main>
+    <footer>
+        <a href="https://www.instagram.com/dalbarbalocandapastificio/" target="_blank"></a>
+        <a href="https://www.facebook.com/DalBarbaLocandaPastificio" target="_blank"></a>
+        <a href="https://www.google.com/maps/place/Locanda+Dal+Barba,+Via+Antonio+Pesenti,+1,+38060+Villa+Lagarina+TN/@45.917778,11.0302746,16z/data=!4m2!3m1!1s0x47820c3eb1a17281:0xd83a882a7d66cca0"></a>
+    </footer>
 </body>
 </html>
 
 <style>
-*{
-    scroll-behavior: smooth;
-    font-family: 'Roboto', sans-serif;
-}
-main{
-    display: flex;
-    flex-direction: column;
-}
-article{
-    margin-top: 45px;
-    display: flex;
-    justify-content: center;
-}
+    .menu a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'roboto', sans-serif;
+        font-size: 2rem;
+        color: rgb(176, 47, 52);
+        text-decoration: none;
+        text-align: center;
+        width: 100%;
+    }
+    footer{
+        background-color: rgba(0, 0, 0, 0.719);
+        box-shadow: 0px -4px 5px rgba(0, 0, 0, 0.274);
+        height: 150px;
+        margin-top: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 45px;
+    }
+    footer a{
+        width: 15px;
+        height: 15px;
+        padding: 10px;
+    }
+    footer a:nth-child(1){
+        background-image: url('/instagram.svg');
+    }
+    footer a:nth-child(2) {
+        background-image: url('/facebook.svg');
+    }
+    footer a:nth-child(3) {
+        background-image: url('/location.svg');
+    }
+    *{
+        scroll-behavior: smooth;
+        font-family: 'Roboto', sans-serif;
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+    }
+    .menu{
+        margin-left: 35px;
+        margin-top: 60px;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        background-color: white;
+        border-radius: 100%;
+    }
+    article{
+        margin-top: 45px;
+        display: flex;
+        justify-content: center;
+    }
+    embed{
+        width: 35px;
+        background: white;
+        border-radius: 100%;
+        padding: 20px;
+    }
     body{
         background-color: #B48C59;
         margin: 0;
@@ -78,6 +140,7 @@ article{
         align-items: center;
         background-image: url('/header.png');
         background-size: cover;
+        background-position: center;
         background-repeat: no-repeat;
         height: 150px;
         box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.274);
@@ -96,7 +159,7 @@ article{
     li{
         list-style: none;
     }
-    a{
+    header a{
         margin-left: 20px;
         margin-top: 20px;
     }
