@@ -1,6 +1,6 @@
 ---
     const responseStoria = await fetch('http://api.made7-g6.webe.radio/api/storias')
-
+    const responseStoriaData = await responseStoria.json()
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -18,43 +18,77 @@
         <nav>
             <ul>
                 <li>
-                    <a href="#storia" class="link">Storia</a>
-                </li>
-                <li>
                     <a href="#chi-siamo" class="link">Chi Siamo</a>
                 </li>
                 <li>
-                    <a href="#locanda" class="link">La Locanda</a>
+                    <a href="#storia" class="link">Storia</a>
                 </li>
             </ul>
         </nav>
     </header>
     <main>
         <article>
-            <img class="img" src="icona.png" alt="">
+            <a href="#locanda">La nostra Locanda</a>
+            <img class="img" src="/locanda.jpg" alt="">
         </article>
         <div class="menu">
             <a href="/menu">+</a>
         </div>
-        <article>
-            <h1 id="storia">STORIA</h1>
-        </article>
         <article>
             <h1 id="chi-siamo">CHI SIAMO</h1>
         </article>
         <article>
             <h1 id="locanda">LA LOCANDA</h1>
         </article>
+        <article>
+            <h1 id="storia" onclick="">STORIA</h1>
+            {responseStoriaData.data.map(storiella=>
+                <div>
+                    <h2>{storiella.attributes.titolo}</h2>
+                    <h4>{storiella.attributes.descrizione}</h4>
+                </div>
+            )}
+        </article>
     </main>
     <footer>
         <a href="https://www.instagram.com/dalbarbalocandapastificio/" target="_blank"></a>
         <a href="https://www.facebook.com/DalBarbaLocandaPastificio" target="_blank"></a>
-        <a href="https://www.google.com/maps/place/Locanda+Dal+Barba,+Via+Antonio+Pesenti,+1,+38060+Villa+Lagarina+TN/@45.917778,11.0302746,16z/data=!4m2!3m1!1s0x47820c3eb1a17281:0xd83a882a7d66cca0"></a>
+        <a href="https://www.google.com/maps/place/Locanda+Dal+Barba,+Via+Antonio+Pesenti,+1,+38060+Villa+Lagarina+TN/@45.917778,11.0302746,16z/data=!4m2!3m1!1s0x47820c3eb1a17281:0xd83a882a7d66cca0" target="_blank"></a>
     </footer>
 </body>
 </html>
 
 <style>
+    article div{
+        margin-bottom: 45px;
+        border-bottom: 1px solid black;
+    }
+    article a:nth-child(1){
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 120px;
+        font-size: xx-large;
+        width: 100%;
+        text-shadow: 0px 0px 5px black;
+    }
+    article img:nth-child(1){
+        position: absolute;
+    }
+    article:nth-child(2){
+        display: flex;
+        flex-direction: column;
+    }
+    article a {
+        text-decoration: none;
+        color: white;
+    }
+    article img{
+        width: 100%;
+        height: auto;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.459);
+    }
     .menu a{
         display: flex;
         justify-content: center;
@@ -108,11 +142,16 @@
         height: 50px;
         background-color: white;
         border-radius: 100%;
+        box-shadow: 0px 0px 5px black;
+    }
+    h2, h4{
+        text-align: center;
     }
     article{
         margin-top: 45px;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
     }
     embed{
         width: 35px;
@@ -121,7 +160,7 @@
         padding: 20px;
     }
     body{
-        background-color: #B48C59;
+        background-color: white;
         margin: 0;
     }
     img{
@@ -164,24 +203,23 @@
         margin-top: 20px;
     }
     .link{
-        background: white;
         font-size: 1rem;
         color: rgb(0, 0, 0);
         text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.596);
         text-decoration: none;
         font-family: 'Roboto', sans-serif;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.404);
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        padding: 2px 10px;
+        padding: 3px;
+        border: 1px solid #EDF2F4;
+        color:#EDF2F4;
         margin-left: 0px;
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.274), inset 0px 5px 10px rgba(0, 0, 0, 0.212);
         transition: 1s ease;
     }
     .link:hover{
-        border-bottom: 2px solid rgb(255, 255, 255);
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
+        border: 1px solid #edf2f400;
+        border-bottom: 1px solid;
+    }
+    @media only screen and (max-width: 600px){
+
     }
     
 </style>

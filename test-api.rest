@@ -1,2 +1,5 @@
 GET http://api.made7-g6.webe.radio/api/bevandes
 
+###
+http://api.made7-g6.webe.radio/api/storias
+
