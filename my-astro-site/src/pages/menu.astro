@@ -137,42 +137,82 @@
                 )
             }
         </article>
+        <article>
+            <h1>Bevande</h1>
+            {
+                await dataBevanda.data.map(all=>
+                    <h5>{all.attributes.nome}</h5>
+                    <h6>{all.attributes.descrizione}</h6>
+                    <h6>{all.attributes.prezzo+" €"}</h6>
+                    <img src={"http://api.made7-g6.webe.radio"+ all.attributes.immagini.data.attributes.url}>
+                    <hr>
+                )
+            }
+        </article>
     </main>
-    
+    <footer>
+        <a href="https://www.instagram.com/dalbarbalocandapastificio/" target="_blank"></a>
+        <a href="https://www.facebook.com/DalBarbaLocandaPastificio" target="_blank"></a>
+        <a href="https://www.google.com/maps/place/Locanda+Dal+Barba,+Via+Antonio+Pesenti,+1,+38060+Villa+Lagarina+TN/@45.917778,11.0302746,16z/data=!4m2!3m1!1s0x47820c3eb1a17281:0xd83a882a7d66cca0" target="_blank"></a>
+    </footer>
 </body>
 
 <style>
-body{
-    overflow-x: hidden;
-    width: 100vw;
-    font-family: 'Roboto', sans-serif;
-    background-color: #EDF2F4;
-    text-shadow: 0px 2px 10px white, 0px 0px 3px black;
-    color: #EDF2F4;
-    margin: 0;
-    height: 100vh;
-}
-article{
-    width: 100vw;
-}
-article img{
-    width: 100%;
-}
-header{
-    background: url('/header2.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    height:75px;
-    width: 100vw;
-    background-size: cover;
-    padding-top: 10px;
-}
-header h1{
-    font-size: 2rem;
-    text-align: center;
-}
-h5{
-    color: #2B2D42;
-    text-align: center;
-}
+    footer{
+        background-color: #d8042be8;
+        box-shadow: 0px -4px 5px rgba(0, 0, 0, 0.274);
+        height: 150px;
+        margin-top: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 45px;
+    }
+    footer a{
+        width: 15px;
+        height: 15px;
+        padding: 10px;
+    }
+    footer a:nth-child(1){
+        background-image: url('/instagram.svg');
+    }
+    footer a:nth-child(2) {
+        background-image: url('/facebook.svg');
+    }
+    footer a:nth-child(3) {
+        background-image: url('/location.svg');
+    }
+    body{
+        overflow-x: hidden;
+        width: 100vw;
+        font-family: 'Roboto', sans-serif;
+        background-color: #EDF2F4;
+        text-shadow: 0px 2px 10px white, 0px 0px 3px black;
+        color: #EDF2F4;
+        margin: 0;
+        height: 100vh;
+    }
+    article{
+        width: 100vw;
+    }
+    article img{
+        width: 100%;
+    }
+    header{
+        background: url('/header2.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        height:75px;
+        width: 100vw;
+        background-size: cover;
+        padding-top: 10px;
+    }
+    header h1{
+        font-size: 2rem;
+        text-align: center;
+    }
+    h5{
+        color: #2B2D42;
+        text-align: center;
+    }
 </style>
