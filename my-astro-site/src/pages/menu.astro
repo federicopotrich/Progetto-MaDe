@@ -61,106 +61,119 @@
     <header>
         <h1>Menù</h1>
     </header>
-
+    <hr>
     <main>
         <article>
             <h1>Primi</h1>
-            <div>
                 { 
                     await dataPrimi.data.map(all=>
-                        <h5>{all.attributes.nome}</h5>
-                        <h6>{all.attributes.descrizione}</h6>
-                        <h6>{all.attributes.prezzo+" €"}</h6>
-                        <img src={"http://api.made7-g6.webe.radio"+ all.attributes.immagini.data.attributes.url}>
-                        <hr>
-                
-                    )}
-            </div>
-        </article>
-        <article>
-            <h1>Secondi</h1>
-            <div>
-                { 
-                    await dataSecondi.data.map(all=>
-                        <h5>{all.attributes.nome}</h5>
-                        <h6>{all.attributes.descrizione}</h6>
-                        <h6>{all.attributes.prezzo+" €"}</h6>
-                        <img src={"http://api.made7-g6.webe.radio"+ all.attributes.immagini.data.attributes.url}>
-                        <hr>
-                
-                    )}
-            </div>
-        </article>
-        <article>
-            <h1>Specialità</h1>
-            <div>
-                { 
-                    await dataSpecialita.data.map(all=>
-                        <h5>{all.attributes.nome}</h5>
-                        <h6>{all.attributes.descrizione}</h6>
-                        <h6>{all.attributes.prezzo+" €"}</h6>
-                        <img src={"http://api.made7-g6.webe.radio"+ all.attributes.immagini.data.attributes.url}>
-                        <hr>
-                
-                    )}
-            </div>
-        </article>
-        <article>
-            <h1>Contorni</h1>
-            <div>
-                { 
-                    await dataContorni.data.map(all=>
-                        <h5>{all.attributes.nome}</h5>
-                        <h6>{all.attributes.descrizione}</h6>
-                        <h6>{all.attributes.prezzo+" €"}</h6>
-                        <img src={"http://api.made7-g6.webe.radio"+ all.attributes.immagini.data.attributes.url}>
-                        <hr>
-                
-                    )}
-            </div>
-        </article>
-        <article>
-            <h1>Vegetariano</h1>
-            <div>
-                { 
-                    await dataVegetariano.data.map(all=>
-                        <h5>{all.attributes.nome}</h5>
-                        <h6>{all.attributes.descrizione}</h6>
-                        <h6>{all.attributes.prezzo+" €"}</h6>
-                        <img src={"http://api.made7-g6.webe.radio"+ all.attributes.immagini.data.attributes.url}>
-                        <hr>
-                
-                    )}
-            </div>
-        </article>
-        <article>
-            <h1>Dolci</h1>
-            <div>
-                { 
-                    await dataDolci.data.map(all=>
-                        <h5>{all.attributes.nome}</h5>
-                        <h6>{all.attributes.descrizione}</h6>
-                        <h6>{all.attributes.prezzo+" €"}</h6>
-                        <img src={"http://api.made7-g6.webe.radio"+ all.attributes.immagini.data.attributes.url}>
-                        <hr>
-                
-                    )}
-            </div>
-        </article>
-        <article>
-            <h1>Bevande</h1>
-            <div>
-                { 
-                    await dataBevanda.data.map(all=>
-                        <h5>{all.attributes.nome}</h5>
-                        <h6>{all.attributes.descrizione}</h6>
-                        <h6>{all.attributes.prezzo+" €"}</h6>
-                        <img src={"http://api.made7-g6.webe.radio"+ all.attributes.immagini.data.attributes.url}>
-                        <hr>
+                        <div>
+                            <section>
+                                <h5>{all.attributes.nome}</h5>
+                                <h6>{all.attributes.descrizione}</h6>
+                                <h6>{all.attributes.prezzo+" €"}</h6>
+                            </section>
+                            <img src={"http://api.made7-g6.webe.radio"+ all.attributes.immagini.data.attributes.url}>
+                        </div>
                 
                     )
                 }
-            </div>
+        </article>
+        <article>
+            <h1>Secondi</h1>
+                { 
+                    await dataSecondi.data.map(all=>
+                        <div>
+                            <section>
+                                <h5>{all.attributes.nome}</h5>
+                                <h6>{all.attributes.descrizione}</h6>
+                                <h6>{all.attributes.prezzo+" €"}</h6>
+                            </section>
+                            <img src={"http://api.made7-g6.webe.radio"+ all.attributes.immagini.data.attributes.url}>
+                        </div>
+                
+                    )
+                }
+        </article>
+        <article>
+            <h1>Specialità</h1>
+                { 
+                    await dataSpecialita.data.map(all=>
+                        <div>
+                            <section>
+                                <h5>{all.attributes.nome}</h5>
+                                <h6>{all.attributes.descrizione}</h6>
+                                <h6>{all.attributes.prezzo+" €"}</h6>
+                            </section>
+                            <img src={"http://api.made7-g6.webe.radio"+ all.attributes.immagini.data.attributes.url}>
+                        </div>
+                
+                    )
+                }
+        </article>
+        <article>
+            <h1>Contorni</h1>
+                { 
+                    await dataContorni.data.map(all=>
+                        <div>
+                            <section>
+                                <h5>{all.attributes.nome}</h5>
+                                <h6>{all.attributes.descrizione}</h6>
+                                <h6>{all.attributes.prezzo+" €"}</h6>
+                            </section>
+                            <img src={"http://api.made7-g6.webe.radio"+ all.attributes.immagini.data.attributes.url}>
+                        </div>
+                
+                    )
+                }
+        </article>
+        <article>
+            <h1>Vegetariano</h1>
+                { 
+                    await dataVegetariano.data.map(all=>
+                        <div>
+                            <section>
+                                <h5>{all.attributes.nome}</h5>
+                                <h6>{all.attributes.descrizione}</h6>
+                                <h6>{all.attributes.prezzo+" €"}</h6>
+                            </section>
+                            <img src={"http://api.made7-g6.webe.radio"+ all.attributes.immagini.data.attributes.url}>
+                        </div>
+                
+                    )
+                }
+        </article>
+        <article>
+            <h1>Dolci</h1>
+                { 
+                    await dataDolci.data.map(all=>
+                        <div>
+                            <section>
+                                <h5>{all.attributes.nome}</h5>
+                                <h6>{all.attributes.descrizione}</h6>
+                                <h6>{all.attributes.prezzo+" €"}</h6>
+                            </section>
+                            <img src={"http://api.made7-g6.webe.radio"+ all.attributes.immagini.data.attributes.url}>
+                        </div>
+                
+                    )
+                }
+        </article>
+        <article>
+            <h1>Bevande</h1>
+                { 
+                    await dataBevanda.data.map(all=>
+                        <div>
+                            <section>
+                                <h5>{all.attributes.nome}</h5>
+                                <h6>{all.attributes.descrizione}</h6>
+                                <h6>{all.attributes.prezzo+" €"}</h6>
+                            </section>
+                            <img src={"http://api.made7-g6.webe.radio"+ all.attributes.immagini.data.attributes.url}>
+                        </div>
+                
+                    )
+                }
         </article>
     </main>
     <footer>
@@ -171,9 +184,26 @@
 </body>
 
 <style>
-    article div:nth-child(odd){
+    article div{
+        align-items: center;
         display: flex;
-        justify-content: center;
+        flex-direction: row;
+        margin-bottom: 10px;
+    }
+    article div:nth-child(even) {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    h1{
+        text-align: center;
+    }
+    h6{
+        text-align: center;
     }
     footer{
         background-color: #d8042be8;
@@ -213,7 +243,8 @@
         width: 100vw;
     }
     article img{
-        width: 100%;
+        width: 50%;
+        height: 50%;
     }
     header{
         background: url('/header2.png');
