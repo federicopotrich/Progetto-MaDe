@@ -1,6 +1,52 @@
 ---
     const response = await fetch('http://api.made7-g6.webe.radio/api/voci-del-menu?populate=*')
     const data = await response.json();
+
+    /*
+        1) primi
+        2) secondi
+        3) Specialità
+        4) contorni
+        5) vegetariano
+        6) dolci
+        7) bevande
+        
+    */
+
+    const responsePrimi = await fetch('http://api.made7-g6.webe.radio/api/primis?populate=*')
+    const dataPrimi = await responsePrimi.json();
+    /*console.log(dataPrimi.data[0].attributes.nome)
+    console.log(dataPrimi.data[0].attributes.descrizione)
+    console.log(dataPrimi.data[0].attributes.prezzo)
+    console.log("http://api.made7-g6.webe.radio"+dataPrimi.data[0].attributes.immagini.data.attributes.url)*/
+
+    const responseSecondi = await fetch('http://api.made7-g6.webe.radio/api/secondis?populate=*')
+    const dataSecondi = await responseSecondi.json();
+    /*console.log(dataSecondi.data[0].attributes.nome)
+    console.log(dataSecondi.data[0].attributes.descrizione)
+    console.log(dataSecondi.data[0].attributes.prezzo)
+    console.log("http://api.made7-g6.webe.radio"+dataSecondi.data[0].attributes.immagini.data.attributes.url)*/
+    
+    const responseSpecialita = await fetch('http://api.made7-g6.webe.radio/api/specialitas?populate=*')
+    const dataSpecialita = await responseSpecialita.json();
+
+    const responseContorni = await fetch('http://api.made7-g6.webe.radio/api/contornis?populate=*')
+    const dataContorni = await responseContorni.json();
+    /*console.log(dataContorni.data[0].attributes.nome)
+    console.log(dataContorni.data[0].attributes.descrizione)
+    console.log(dataContorni.data[0].attributes.prezzo)
+    console.log("http://api.made7-g6.webe.radio"+dataContorni.data[0].attributes.immagini.data.attributes.url)*/
+    
+    const responseVegetariano = await fetch('http://api.made7-g6.webe.radio/api/vegetarianos?populate=*')
+    const dataVegetariano = await responseVegetariano.json();
+    
+    const responseDolci = await fetch('http://api.made7-g6.webe.radio/api/dolcis?populate=*')
+    const dataDolci = await responseDolci.json();
+
+    const responseBevanda = await fetch('http://api.made7-g6.webe.radio/api/bevandes?populate=*')
+    const dataBevanda = await responseBevanda.json();
+
+    //console.log(dataPrimi.data[0].attributes.)
     //console.log("http://api.made7-g6.webe.radio"+data.data[0].attributes.cover.data.attributes.url)
 ---
 <head>
@@ -16,14 +62,83 @@
         <h1>Menù</h1>
     </header>
 
-    {
-        await data.data.map(all=>
-            <h5>{all.attributes.nome}</h5>
-            <img src={"http://api.made7-g6.webe.radio"+all.attributes.cover.data.attributes.url}>
-            <hr>
-        
-        )
-    }
+    <main>
+        <article>
+            <h1>Primi</h1>
+            {
+                await dataPrimi.data.map(all=>
+                    <h5>{all.attributes.nome}</h5>
+                    <h6>{all.attributes.descrizione}</h6>
+                    <h6>{all.attributes.prezzo+" €"}</h6>
+                    <img src={"http://api.made7-g6.webe.radio"+ all.attributes.immagini.data.attributes.url}>
+                    <hr>
+                
+                )
+            }
+        </article>
+        <article>
+            <h1>Secondi</h1>
+            {
+                await dataSecondi.data.map(all=>
+                    <h5>{all.attributes.nome}</h5>
+                    <h6>{all.attributes.descrizione}</h6>
+                    <h6>{all.attributes.prezzo+" €"}</h6>
+                    <img src={"http://api.made7-g6.webe.radio"+ all.attributes.immagini.data.attributes.url}>
+                    <hr>
+                
+                )
+            }
+        </article>
+        <article>
+            <h1>Specialità</h1>
+            {
+                await dataSpecialita.data.map(all=>
+                    <h5>{all.attributes.nome}</h5>
+                    <h6>{all.attributes.descrizione}</h6>
+                    <h6>{all.attributes.prezzo+" €"}</h6>
+                    <img src={"http://api.made7-g6.webe.radio"+ all.attributes.immagini.data.attributes.url}>
+                    <hr>
+                )
+            }
+        </article>
+        <article>
+            <h1>Contorni</h1>
+            {
+                await dataContorni.data.map(all=>
+                    <h5>{all.attributes.nome}</h5>
+                    <h6>{all.attributes.descrizione}</h6>
+                    <h6>{all.attributes.prezzo+" €"}</h6>
+                    <img src={"http://api.made7-g6.webe.radio"+ all.attributes.immagini.data.attributes.url}>
+                    <hr>
+                )
+            }
+        </article>
+        <article>
+            <h1>Vegetariano</h1>
+            {
+                await dataVegetariano.data.map(all=>
+                    <h5>{all.attributes.nome}</h5>
+                    <h6>{all.attributes.descrizione}</h6>
+                    <h6>{all.attributes.prezzo+" €"}</h6>
+                    <img src={"http://api.made7-g6.webe.radio"+ all.attributes.immagini.data.attributes.url}>
+                    <hr>
+                )
+            }
+        </article>
+        <article>
+            <h1>Dolci</h1>
+            {
+                await dataDolci.data.map(all=>
+                    <h5>{all.attributes.nome}</h5>
+                    <h6>{all.attributes.descrizione}</h6>
+                    <h6>{all.attributes.prezzo+" €"}</h6>
+                    <img src={"http://api.made7-g6.webe.radio"+ all.attributes.immagini.data.attributes.url}>
+                    <hr>
+                )
+            }
+        </article>
+    </main>
+    
 </body>
 
 <style>
@@ -36,6 +151,12 @@ body{
     color: #EDF2F4;
     margin: 0;
     height: 100vh;
+}
+article{
+    width: 100vw;
+}
+article img{
+    width: 100%;
 }
 header{
     background: url('/header2.png');
